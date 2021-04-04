@@ -1,0 +1,14 @@
+
+version: '3.8'
+
+services:
+    app:
+        build:
+            context: .
+            args:
+                HOST_UID: ${HOST_UID}
+                TIMEZONE: ${TIMEZONE}
+                DEPLOYMENT_PATH: ${DEPLOYMENT_PATH}
+                PHP_VERSION: ${PHP_VERSION}
+        volumes:
+            - ${SOURCE_PATH}:${DEPLOYMENT_PATH}
