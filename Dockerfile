@@ -6,6 +6,7 @@ FROM php:${PHP_VERSION}-cli
 ARG HOST_UID
 ARG TIMEZONE
 ARG DEPLOYMENT_PATH
+ARG SWOOLE_VERSION
 
 WORKDIR ${DEPLOYMENT_PATH}
 
@@ -26,6 +27,7 @@ RUN ln -snf /usr/share/zoneinfo/${TIMEZONE} /etc/localtime && \
 # swoole
 RUN git clone https://github.com/swoole/swoole-src.git && \
     cd swoole-src && \
+    git checkout v${SWOOLE_VERSION} && \
     phpize && \
     ./configure && \
     make && \

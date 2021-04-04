@@ -10,5 +10,6 @@ services:
                 TIMEZONE: ${TIMEZONE}
                 DEPLOYMENT_PATH: ${DEPLOYMENT_PATH}
                 PHP_VERSION: ${PHP_VERSION}
+                SWOOLE_VERSION: ${SWOOLE_VERSION}
         volumes:
             - ${SOURCE_PATH}:${DEPLOYMENT_PATH}
